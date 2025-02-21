@@ -45,7 +45,7 @@ int main() {
 
 
 
-
+//other way
 
 
 #include <stdio.h>
