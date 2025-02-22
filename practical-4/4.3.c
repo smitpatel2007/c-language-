@@ -22,28 +22,21 @@ int main() {
 
 int main() {
     int a, b;
-
     printf("Enter two numbers: ");
     scanf("%d %d", &a, &b);
-
-    int result = (a > b) ? 1 : (b > a) ? 2 : 0;
-
-    switch (result) {
+    
+    switch (a>b) {
         case 1:
             printf("Maximum number is: %d\n", a);
             break;
-        case 2:
+        case 0:
             if (b > a) {
                 printf("Maximum number is: %d\n", b);
             } else {
                 printf("Both numbers are equal.\n");
             }
             break;
-        case 0:
-            printf("Both numbers are equal.\n");
-            break;
     }
-
     return 0;
 }
 
