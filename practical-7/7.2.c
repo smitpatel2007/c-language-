@@ -12,10 +12,10 @@ int main() {
 
 // Function definition
 void areaOfCircle() {
-    float radius, area;
+    float r, area;
     printf("Enter the radius of the circle: ");
-    scanf("%f", &radius);
-    area = PI * radius * radius;
+    scanf("%f", &r);
+    area = PI * r* r;
     printf("Area of the circle: %.2f\n", area);
 }
 
@@ -36,10 +36,10 @@ int main() {
 
 // Function definition
 float areaOfCircle() {
-    float radius;
+    float r;
     printf("Enter the radius of the circle: ");
-    scanf("%f", &radius);
-    return PI * radius * radius; // Returning the area
+    scanf("%f", &r);
+    return PI * r * r; // Returning the area
 }
 
            // 3. With arguments but no return value
@@ -51,16 +51,16 @@ float areaOfCircle() {
 void areaOfCircle(float radius);
 
 int main() {
-    float radius;
+    float r;
     printf("Enter the radius of the circle: ");
-    scanf("%f", &radius);
-    areaOfCircle(radius); // Function calling with argument
+    scanf("%f", &r);
+    areaOfCircle(r); // Function calling with argument
     return 0;
 }
 
 // Function definition
-void areaOfCircle(float radius) {
-    float area = PI * radius * radius;
+void areaOfCircle(float r) {
+    float area = PI * r * r;
     printf("Area of the circle: %.2f\n", area);
 }
 
@@ -70,21 +70,20 @@ void areaOfCircle(float radius) {
 #include <stdio.h>
 #define PI 3.14159
 
-// Function prototype
-float areaOfCircle(float radius);
+
+float areaOfCircle(float r);
 
 int main() {
-    float radius, area;
+    float r, area;
     printf("Enter the radius of the circle: ");
-    scanf("%f", &radius);
-    area = areaOfCircle(radius); // Function calling with argument and storing the returned value
+    scanf("%f", &r);
+    area = areaOfCircle(r); 
     printf("Area of the circle: %.2f\n", area);
     return 0;
 }
 
-// Function definition
-float areaOfCircle(float radius) {
-    return PI * radius * radius; // Returning the calculated area
+float areaOfCircle(float r) {
+    return PI * r * r; 
 }
 
 
