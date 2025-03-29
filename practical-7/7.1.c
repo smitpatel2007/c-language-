@@ -1,40 +1,27 @@
 #include <stdio.h>
-
-// Function Prototype
-void checkPrime(int num);
-
+void Prime(int n);
 int main() {
-    int number;
-
-    // Taking input from the user
+    int n;
     printf("Enter a number: ");
-    scanf("%d", &number);
-
-    // Function Calling
-    checkPrime(number);
-
+    scanf("%d", &n);
+    Prime(n);
     return 0;
 }
-
-// Function Definition
-void checkPrime(int num) {
-    int i, isPrime = 1;
-
-    if (num <= 1) {
-        isPrime = 0; // Numbers less than or equal to 1 are not prime
+void Prime(int n) {
+    int isPrime = 1;
+    if (n < 2) {
+        isPrime = 0; 
     } else {
-        for (i = 2; i <= num / 2; i++) {
-            if (num % i == 0) {
-                isPrime = 0; // Found a divisor, so not prime
-                break;
+        for (int i = 2; i < n; i++) { 
+            if (n% i == 0) {
+                isPrime = 0; 
+                break; 
             }
         }
     }
-
-    // Printing the result
-    if (isPrime)
-        printf("%d is a prime number.\n", num);
-    else
-        printf("%d is not a prime number.\n", num);
+    if (isPrime) {
+        printf("%d is a Prime Number.\n", n);
+    } else {
+        printf("%d is Not a Prime Number.\n", n);
+    }
 }
-
