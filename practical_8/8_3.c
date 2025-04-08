@@ -4,21 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current Date and Time</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        h2 {
-            color: #333;
-        }
-        p {
-            font-size: 20px;
-            font-weight: bold;
-            color: #007bff;
-        }
-    </style>
 </head>
 <body>
 
@@ -26,34 +11,42 @@
     <p id="dateTime"></p>
 
     <script>
-        function updateDateTime() {
-            let now = new Date();
+        function showDateTime() {
+            let now = new Date(); // Get current date and time
 
-            // Get date parts
-            let day = String(now.getDate()).padStart(2, '0'); // Ensures two digits
-            let month = String(now.getMonth() + 1).padStart(2, '0'); // Month starts from 0
+            // Get date values
+            let day = now.getDate();
+            let month = now.getMonth() + 1; // Month starts from 0
             let year = now.getFullYear();
 
-            // Get time parts
-            let hours = String(now.getHours()).padStart(2, '0');
-            let minutes = String(now.getMinutes()).padStart(2, '0');
-            let seconds = String(now.getSeconds()).padStart(2, '0');
+            // Add 0 before single-digit day & month
+            if (day < 10) day = "0" + day;
+            if (month < 10) month = "0" + month;
+
+            // Get time values
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+
+            // Add 0 before single-digit time values
+            if (hours < 10) hours = "0" + hours;
+            if (minutes < 10) minutes = "0" + minutes;
+            if (seconds < 10) seconds = "0" + seconds;
 
             // Format date and time
-            let formattedDate = `${day}/${month}/${year}`;
-            let formattedTime = `${hours}:${minutes}:${seconds}`;
+            let date = day + "/" + month + "/" + year;
+            let time = hours + ":" + minutes + ":" + seconds;
 
-            // Display in the webpage
-            document.getElementById("dateTime").innerHTML = `Date: ${formattedDate} <br> Time: ${formattedTime}`;
+            // Display on the webpage
+            document.getElementById("dateTime").innerHTML = "Date: " + date + "<br>Time: " + time;
         }
 
-        // Update time every second
-        setInterval(updateDateTime, 1000);
+        // Run the function every second to update time
+        setInterval(showDateTime, 1000);
 
-        // Call the function once to show immediately
-        updateDateTime();
+        // Call once to display immediately
+        showDateTime();
     </script>
 
 </body>
 </html>
-
