@@ -1,28 +1,21 @@
 #include <stdio.h>
-
-int countVowels(char str[]) {
+void countVowels() {
+    char str[100];
     int count = 0;
+    // Taking input from user
+    printf("Enter a string: ");
+    scanf("%[^\n]s", str); // Reads a full line until newline
+    // Counting vowels
     for (int i = 0; str[i] != '\0'; i++) {
-        char ch = str[i];
-        // Check if the character is a vowel (both uppercase and lowercase)
-        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
-            ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' ||
+            str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U') {
             count++;
         }
     }
-    return count;
+    // Display result
+    printf("Number of vowels in the given string: %d\n", count);
 }
-
 int main() {
-    char str[100];
-
-    // Taking input from user
-    printf("Enter a string: ");
-    gets(str); // Using gets() (not recommended for large inputs, but works here)
-
-    // Count vowels and display result
-    int vowelCount = countVowels(str);
-    printf("Number of vowels in the given string: %d\n", vowelCount);
-
+    countVowels(); // Call the function to count vowels
     return 0;
 }
