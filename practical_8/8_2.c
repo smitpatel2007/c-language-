@@ -4,7 +4,7 @@ void countVowels() {
     int count = 0;
     // Taking input from user
     printf("Enter a string: ");
-    scanf("%[^\n]s", str); // Reads a full line until newline
+    scanf("%s", str); // Reads a full line until newline
     // Counting vowels
     for (int i = 0; str[i] != '\0'; i++) {
         if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' ||
