@@ -48,7 +48,7 @@ float areaOfCircle() {
 #define PI 3.14159
 
 // Function prototype
-void areaOfCircle(float radius);
+void areaOfCircle(float r);
 
 int main() {
     float r;
