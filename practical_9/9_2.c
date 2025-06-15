@@ -5,6 +5,7 @@ struct Game {
     char player_name[50];
     char team_name[50];
     int max_score;
+    int i;
 };
 
 int main() {
