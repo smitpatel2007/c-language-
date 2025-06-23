@@ -14,6 +14,7 @@ struct Student {
     char name[50];
     char subject[50];
     float percentage;
+    int i;
 };
 
 int main() {
